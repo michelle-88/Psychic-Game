@@ -34,7 +34,7 @@ function resetScores(){
 };
 
 computerRandomLetter();
-console.log(computerGuess);
+console.log("Computer guess: " + computerGuess);
 
 updateDisplay();
 
@@ -42,16 +42,18 @@ updateDisplay();
 document.onkeyup = function(event){
      
     userGuess = event.key.toLowerCase();
-    
-    console.log(userGuess);
+
+    guessSoFar.push(userGuess);
+
+
 
 // Write conditional to determine if userGuess matches computerGuess. 
     if(userGuess === computerGuess){
         wins++;
         updateDisplay();
-        computerRandomLetter();
+    };
 
-    }
+   
     
    
 // if computerguess = userguess, change display text, wins++, generate new letter, 
