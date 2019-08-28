@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Psychic Game</title>
+</head>
+<body>
+    <!-- Create HTML content to display results -->
+
+    <h3 id="displayText">Press any Key to Start!</h3>
+
+    <p>Wins: <span id="wins"></span></p>
+    <p>Losses: <span id="losses"></span></p>
+    <p>Guesses Left: <span id="guessLeft"></span></p>
+    <p>Guesses So Far: <span id="guessSoFar"></span></p>
+
+
+    <!-- if guess left = 0 then losses score goes up and guess left/already guess reset and display up top changes-->
+    
+    
+    <script>
+        // Create variables to store values(wins, losses, user guess, computer guess, computer choices)
+        var wins = 0;
+        var losses = 0;
+        var guessLeft = 9;
+        var guessSoFar = [];
+        var computerChoices = ["a", "b", "c", "d", "e", "f", "g"]
+        var userGuess;
+        var computerGuess;
+        var displayText = "";
+
+        // Create function to display results to the page/DOM
+        function updateDisplay(){
+            document.querySelector("#displayText").innerHTML = displayText;
+            document.querySelector("#wins").innerHTML = wins;
+            document.querySelector("#losses").innerHTML = losses;
+            document.querySelector("#guessLeft").innerHTML = guessLeft;
+            document.querySelector("#guessSoFar").innerHTML = guessSoFar;
+        };
+        
+
+        // Create a function to generate a random letter choice for computer guess
+        function computerRandomLetter(){
+            computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+        };
+        
+        // Create function to reset all scores (guesses left, already guessed) when guesses left reaches 0
+        function resetScores(){
+            guessLeft = 9;
+            guessSoFar = [];
+        }
+
+        computerRandomLetter();
+
+        console.log(computerGuess);
+
+        // Create onkeyup event function to grab userGuess
+        document.onkeyup = function(event){
+             
+            userGuess = event.key;
+            
+            console.log(userGuess);
+
+            
+
+            // if computerguess = userguess, change display text, wins++, generate new letter, 
+
+            
+
+
+            updateDisplay();
+        };
+
+    
+    
+    
+    </script>
+</body>
+</html>
