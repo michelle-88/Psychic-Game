@@ -1,7 +1,3 @@
-// if guess left = 0 then losses score goes up and guess left/already guess reset and display up top changes
-
-
-
 // Create variables to store values(wins, losses, user guess, computer guess, computer choices)
 var wins = 0;
 var losses = 0;
@@ -72,6 +68,5 @@ document.onkeyup = function(event){
         console.log("New Computer guess: " + computerGuess);
     }
 
-    
     updateDisplay();
 };
