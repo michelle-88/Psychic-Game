@@ -61,7 +61,7 @@ document.onkeyup = function(event){
     }
 
 // If userGuess does not match computerGuess
-    else if (userGuess !== computerGuess) {
+    else {
         guessLeft--;        
     }
 
