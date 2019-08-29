@@ -40,25 +40,33 @@ updateDisplay();
 
 // Create onkeyup event function to grab userGuess
 document.onkeyup = function(event){
-     
+    
+    displayText = "";
     userGuess = event.key.toLowerCase();
 
     guessSoFar.push(userGuess);
 
 
-
-// Write conditional to determine if userGuess matches computerGuess. 
+// Write conditionals to determine if userGuess matches computerGuess. 
+// If userGuess matches computerGuess
     if(userGuess === computerGuess){
         wins++;
-        updateDisplay();
-    };
+        displayText = "You've Won!!!";
+        resetScores();
+    }
 
-   
-    
-   
-// if computerguess = userguess, change display text, wins++, generate new letter, 
+// If userGuess does not match computerGuess
+    else if (userGuess !== computerGuess) {
+        guessLeft--;        
+    }
 
-    
+// If guesses left reaches 0
+    if (guessLeft === 0){
+        losses++;
+        
+        displayText = "Try Again!";
+        resetScores();
+    }
 
 
     updateDisplay();
