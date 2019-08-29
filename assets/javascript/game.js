@@ -42,6 +42,8 @@ document.onkeyup = function(event){
 
     displayText = "";
 
+    displayImage.style.display = "none"
+
     userGuess = event.key.toLowerCase();
 
     guessSoFar.push(userGuess);
@@ -51,7 +53,7 @@ document.onkeyup = function(event){
 // If userGuess matches computerGuess
     if(userGuess === computerGuess){
         wins++;
-        displayText = "You've Won!!!";
+        displayText = "You read my mind!";
         displayImage.style.display = "block";
         resetScores();
         computerRandomLetter();
