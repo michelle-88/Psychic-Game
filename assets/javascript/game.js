@@ -52,7 +52,7 @@ document.onkeyup = function(event){
     if(userGuess === computerGuess){
         wins++;
         displayText = "You've Won!!!";
-        displayImage;
+        displayImage.style.display = "block";
         resetScores();
         computerRandomLetter();
         console.log("New Computer guess: " + computerGuess);

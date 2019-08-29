@@ -5,3 +5,7 @@ body {
 #guessSoFar {
     letter-spacing: 5px;
 }
+
+img {
+    margin: 18px auto;
+}
