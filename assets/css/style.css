@@ -3,9 +3,9 @@ body {
 }
 
 #guessSoFar {
-    letter-spacing: 5px;
+    letter-spacing: 5px !important;
 }
 
 img {
-    margin: 18px auto;
+    margin: 18px auto !important;
 }
