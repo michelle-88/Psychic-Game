@@ -41,6 +41,7 @@ updateDisplay();
 // Create onkeyup event function to grab userGuess
 document.onkeyup = function(event){
     
+
     displayText = "";
     userGuess = event.key.toLowerCase();
 
@@ -53,6 +54,8 @@ document.onkeyup = function(event){
         wins++;
         displayText = "You've Won!!!";
         resetScores();
+        computerRandomLetter();
+        console.log("New Computer guess: " + computerGuess);
     }
 
 // If userGuess does not match computerGuess
@@ -63,11 +66,12 @@ document.onkeyup = function(event){
 // If guesses left reaches 0
     if (guessLeft === 0){
         losses++;
-        
         displayText = "Try Again!";
         resetScores();
+        computerRandomLetter();
+        console.log("New Computer guess: " + computerGuess);
     }
 
-
+    
     updateDisplay();
 };
