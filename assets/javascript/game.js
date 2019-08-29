@@ -7,6 +7,9 @@ var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l
 var userGuess;
 var computerGuess;
 var displayText = "";
+var displayImage = document.querySelector("img")
+displayImage.style.display = "none";
+
 
 // Create function to display results to the page/DOM
 function updateDisplay(){
@@ -36,9 +39,9 @@ updateDisplay();
 
 // Create onkeyup event function to grab userGuess
 document.onkeyup = function(event){
-    
 
     displayText = "";
+
     userGuess = event.key.toLowerCase();
 
     guessSoFar.push(userGuess);
@@ -49,6 +52,7 @@ document.onkeyup = function(event){
     if(userGuess === computerGuess){
         wins++;
         displayText = "You've Won!!!";
+        displayImage;
         resetScores();
         computerRandomLetter();
         console.log("New Computer guess: " + computerGuess);
